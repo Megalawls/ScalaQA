@@ -1,0 +1,3 @@
+class ScalaBasics1 {
+
+}
