@@ -6,6 +6,7 @@ object ScalaBasics1 {
     println(TypeInference("10923.123"))
     Strings("electricboogaloo", 5)
     Strings2("Hello", " World", 'e', 'u')
+    println(Operators(true, 0, 50))
   }
 
   def Greetings(string: String) = {
@@ -30,6 +31,12 @@ object ScalaBasics1 {
   def Strings2(string1: String, string2: String, char1: Char, char2: Char): Unit ={
     var string = string1 concat string2
     println(string replace(char1, char2))
+  }
+  def Operators(add: Boolean, int1: Int, int2: Int): Any ={
+    if(int1 == 0){int2}
+    else if(int2 == 0){int1}
+    else if(add){int1+int2}
+    else if(!add){int1*int2}
   }
 
 }
