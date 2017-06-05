@@ -10,6 +10,7 @@ object ScalaBasics1 {
     Iteration("This String", 5)
     Iteration2('a', 5)
     FizzBuzz("Fizz", "Buzz", 20)
+    println(matchConditionals("add", 10, 20))
   }
 
   def Greetings(string: String) = {
@@ -68,6 +69,14 @@ object ScalaBasics1 {
       if(x % 5 == 0){println(string2)}
       else{println(x)}
     }
+  }
+
+  def matchConditionals(x: String, y: Int, z: Int) = x.toLowerCase match{
+      case "add" => y + z
+      case "subtract" => y - z
+      case "multiply" => y * z
+      case "divide" => y / z
+      case _ => "Please give add, subtract, multiply, or divide, along with two commas"
   }
 
 }
