@@ -1,17 +1,30 @@
+import java.util.TimeZone.getAvailableIDs
+
 object ScalaBasics1 {
 
   def main(args: Array[String]): Unit = {
-    Greetings("Hello World")
-    println(Greetings2("Dan"))
-    println(TypeInference("10923.123"))
-    Strings("electricboogaloo", 5)
-    Strings2("Hello", " World", 'e', 'u')
-    println(Operators(true, 0, 50))
-    Iteration("This String", 5)
-    Iteration2('a', 5)
-    FizzBuzz("Fizz", "Buzz", 20)
-    println(matchConditionals("add", 10, 20))
-  }
+//    Greetings("Hello World")
+//    println(Greetings2("Dan"))
+//    println(TypeInference("10923.123"))
+//    Strings("electricboogaloo", 5)
+//    Strings2("Hello", " World", 'e', 'u')
+//    println(Operators(true, 0, 50))
+//    Iteration("This String", 5)
+//    Iteration2('a', 5)
+//    FizzBuzz("Fizz", "Buzz", 20)
+//    println(matchConditionals("add", 10, 20))
+//    var integers = Array(2, 10)
+//    println(matchSwapper(integers))
+//    getAvailableIDs().map(a=>a.split("/")).filter(_.length>1).grouped(10).toArray.map(a=>println(a(0)(1)))
+            //Splits instances in the map with a / by the / into an array, leaving some of the instances in the array as an array.
+            //Filters the array to exclude those that have not been split, ie, those that have only one think in their array
+            //Groups these by ten, populating arrays with them, then prints out the second thing in said array
+//    blackJack(23, 11)
+//    uniqueSum(12, 2, 9)
+//    println(isTooHot(70, true))
+//
+
+}
 
   def Greetings(string: String) = {
     println(string)
@@ -78,5 +91,34 @@ object ScalaBasics1 {
       case "divide" => y / z
       case _ => "Please give add, subtract, multiply, or divide, along with two commas"
   }
+
+   def matchSwapper(any: Any) = any match{
+    case Array(a, b) => (b, a)
+    case List(a, b) => (b, a)
+    case (a, b) => (b, a)
+    case _ => "Please provide either an Array, a List, or a Tuple"
+  }
+
+  def blackJack(a: Int, b: Int) = {
+    if(a <= 0 && b <= 0){println("Please provide two integers larger than zero")}
+    else if(a > 21 && b > 21){println("0")}
+    else if((a > b || b > 21) && a <= 21){println(a)}
+    else if((b > a || a > 21) && b <= 21){println(b)}
+  }
+
+  def uniqueSum(a: Int, b: Int, c: Int) = {
+  if(a==b && b==c){println(0)}
+  else if(a==b){println(c)}
+  else if(b==c){println(a)}
+  else if(a==c){println(b)}
+    else{println(a+b+c)}
+  }
+
+  def isTooHot(temp: Int, isSummer: Boolean): Boolean = {
+    if(isSummer && (temp <= 100 && temp >= 60)){false}
+    else if(!isSummer && (temp <= 90 && temp >= 60)){false}
+    else{true}
+  }
+
 
 }
