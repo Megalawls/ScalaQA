@@ -1,4 +1,4 @@
 
-abstract case class Person(fName: String, lName: String, ) {
+abstract case class Person(fName: String, lName: String) {
 
 }
