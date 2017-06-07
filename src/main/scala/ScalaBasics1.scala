@@ -22,7 +22,7 @@ object ScalaBasics1 {
 //    blackJack(23, 11)
 //    uniqueSum(12, 2, 9)
 //    println(isTooHot(70, true))
-//
+//    beerPriceOptional(23.0, 22.0, Some(2))
 
 }
 
@@ -119,6 +119,6 @@ object ScalaBasics1 {
     else if(!isSummer && (temp <= 90 && temp >= 60)){false}
     else{true}
   }
-
+  def beerPriceOptional(quantity: Double, price: Double, discount: Option[Double] = Some(0)): Double = (quantity * price) - discount.get
 
 }
