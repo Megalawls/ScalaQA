@@ -23,11 +23,16 @@ object ScalaBasics1 {
 //    uniqueSum(12, 2, 9)
 //    println(isTooHot(70, true))
 //    beerPriceOptional(23.0, 22.0, Some(2))
+    greetings("Dave")
 
 }
 
-  def Greetings(string: String) = {
+  def Greetings(string: String) = { //Method
     println(string)
+  }
+
+  var greetings = (name: String) =>{
+    println(s"Hello, $name")
   }
 
   def Greetings2(name: String): String = {
