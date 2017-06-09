@@ -17,3 +17,4 @@ var calculator = (input: ArrayBuffer[Int]) => {
 
 var input = ArrayBuffer[Int](2, 3, 5, 10)
 calculator(input)
+
