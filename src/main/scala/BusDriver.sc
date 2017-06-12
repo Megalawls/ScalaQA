@@ -1,2 +1,0 @@
-var busRoute: List[String]
-
