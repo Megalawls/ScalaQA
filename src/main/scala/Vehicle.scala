@@ -11,6 +11,6 @@ abstract class Vehicle(vehicleType: String, make: String, model: String, reg: St
   }
 }
 
-case class Car(vehicleType: String, make: String, model: String, reg: String) extends Vehicle(vehicleType = "Car", make, model, reg)
+case class Car(make: String, model: String, reg: String) extends Vehicle(vehicleType = "Car", make, model, reg)
 
 case class Motorbike(vehicleType: String, make: String, model: String, reg: String) extends Vehicle(vehicleType = "Motorbike", make, model, reg)

@@ -13,7 +13,7 @@ object Employee {
   def nextID(): Int = {
     employeeId += 1
     employeeId
-  }
+  }                             // implement Traits to create employees/customers
 }
 
 case class Customer(fName: String, lName: String, contactNo: String, customerNo: Int) extends Person(fName, lName, contactNo) {
