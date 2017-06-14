@@ -1,5 +1,7 @@
 import scala.collection.mutable.ArrayBuffer
 
+
+
 object OfflineExercise{
 
   def main(args: Array[String]): Unit = {
@@ -10,7 +12,6 @@ object OfflineExercise{
     //println(fibonacci(5))
     //diamante(15, '@')
     //println(endsInLy("smeelll"))
-    cleanString("mmeeeee  reeeeeeeee ftttasssss")
   }
     //Task One - Complete
   def stutter(input: String): String = {
