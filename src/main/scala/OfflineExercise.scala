@@ -76,12 +76,18 @@ object OfflineExercise{
     else false
   }
     //Task Eight - Failed this miserably
-  var resultString: String = ""
+  var resultArray: ArrayBuffer[Char] = ArrayBuffer.empty
 
   def cleanString(string: String): Unit = {
-    if(resultString.isEmpty){resultString += string.charAt(0); cleanString(string.toCharArray.tail.toString)}
-    else if(string.toCharArray.head != string.charAt(0)){resultString += string.toCharArray.head; cleanString(string.toCharArray.tail.toString)}
-    else cleanString(string.toCharArray.tail.toString)
+//    if(resultString.isEmpty){resultString += string.charAt(0); cleanString(string.toCharArray.tail.toString)}
+//    else if(string.toCharArray.head != string.charAt(0)){resultString += string.toCharArray.head; cleanString(string.toCharArray.tail.toString)}
+//    else cleanString(string.toCharArray.tail.toString)
+
+//    var stringArray = string.toCharArray
+//    if(resultArray.isEmpty){resultArray += stringArray(0); cleanString(stringArray.tail.toString)}
+//    else if(stringArray.head )
+//
+    println
   }
 
     //Task Nine - creates a diamond of height*2 filled with a given character
