@@ -10,6 +10,7 @@ object OfflineExercise{
     //println(fibonacci(5))
     //diamante(15, '@')
     //println(endsInLy("smeelll"))
+    cleanString("mmeeeee  reeeeeeeee ftttasssss")
   }
     //Task One - Complete
   def stutter(input: String): String = {
@@ -73,8 +74,14 @@ object OfflineExercise{
     if((input.charAt(length-1) == 'y' && input.charAt(length-2) == 'l'))true
     else false
   }
-    //Task Eight
+    //Task Eight - Failed this miserably
+  var resultString: String = ""
 
+  def cleanString(string: String): Unit = {
+    if(resultString.isEmpty){resultString += string.charAt(0); cleanString(string.toCharArray.tail.toString)}
+    else if(string.toCharArray.head != string.charAt(0)){resultString += string.toCharArray.head; cleanString(string.toCharArray.tail.toString)}
+    else cleanString(string.toCharArray.tail.toString)
+  }
 
     //Task Nine - creates a diamond of height*2 filled with a given character
   def diamante(height: Int, char: Char): Unit = {
