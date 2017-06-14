@@ -9,8 +9,10 @@ object Runner extends App{
   println(Employee2.toString())
 
   myGarage.addVehicle("Toyota", "Prius", "SE19 1JT", 4)
-  println(myGarage.vehicleList.toString())
+  println(myGarage.vehicleList.toString()) //Prints the entire contents of Garage, with parts to string
 
-  myGarage.removeVehicle("")
-  println(myGarage.vehicleList.toString())
+  myGarage.vehicleList(0).vehicleParts(0).isBroken = true
+
+  myGarage.fixVehicle("SE19 1JT")
+
 }

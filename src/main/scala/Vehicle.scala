@@ -1,15 +1,10 @@
 import scala.collection.mutable.ArrayBuffer
 
 abstract case class Vehicle(vehicleType: String, make: String, model: String, reg: String) {
-  var vehicleParts: ArrayBuffer[Any] = ArrayBuffer.empty
-//  def getMake = make
-//  def getModel = model
-//  def getReg = reg
+  var vehicleParts: ArrayBuffer[Part] = ArrayBuffer.empty
 }
 
-case class Part(name: String, costToFix: Double) {
-  var isBroken: Boolean = false
-}
+case class Part(var name: String, var costToFix: Double, var isBroken: Boolean)
 
 class Car(make: String, model: String, reg: String, wheels: Int) extends Vehicle(vehicleType = "Car", make, model, reg) {
   Car.populateParts(wheels, vehicleParts)
@@ -18,13 +13,13 @@ class Car(make: String, model: String, reg: String, wheels: Int) extends Vehicle
 }
 
 object Car {
-  var populateParts = (wheels: Int, array: ArrayBuffer[Any]) => {
-    array += Part("Boot", 50.00)
-    array += Part("Engine", 300)
-    array += Part("Windscreen", 150)
-    array += Part("Gearbox", 200)
+  var populateParts = (wheels: Int, array: ArrayBuffer[Part]) => {
+    array += Part("Boot", 50.00, false)
+    array += Part("Engine", 300, false)
+    array += Part("Windscreen", 150, false)
+    array += Part("Gearbox", 200, false)
     for(_ <- 1 to wheels){
-    array += Part("Wheel", 125)}
+    array += Part("Wheel", 125, false)}
   }
 }
 
@@ -36,11 +31,11 @@ class Motorbike(make: String, model: String, reg: String) extends Vehicle(vehicl
 }
 
 object Motorbike {
-  var populateParts = (array: ArrayBuffer[Any]) => {
-    array += Part("Engine", 300)
-    array += Part("Windscreen", 150)
-    array += Part("Gearbox", 200)
-    array += Part("Wheel", 125)
-    array += Part("Wheel", 125)
+  var populateParts = (array: ArrayBuffer[Part]) => {
+    array += Part("Engine", 300, false)
+    array += Part("Windscreen", 150, false)
+    array += Part("Gearbox", 200, false)
+    array += Part("Wheel", 125, false)
+    array += Part("Wheel", 125, false)
   }
 }
